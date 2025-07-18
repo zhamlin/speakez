@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light ">
+    <title>Mumble</title>
+    <!-- <link rel="icon" href="data:;base64,iVBORw0KGgo="> -->
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style type="text/tailwindcss">
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+
+        header {
+          display: flex;
+          @apply text-center text-white text-2xl items-center bg-purple-700;
+        }
+    </style>
+    <noscript>
+        <style>
+            .jsonly {
+                display: none
+            }
+        </style>
+    </noscript>
+    <script type="importmap">
+    {
+      "imports": {
+        "html": "/js/lib/html.js",
+        "htm": "/js/third_party/htm.js",
+        "deepsignal": "/js/third_party/deepsignal.min.js",
+        "preact": "/js/third_party/preact/preact.js",
+        "preact/hooks": "/js/third_party/preact/preact-hooks.js",
+        "@preact/signals": "/js/third_party/preact/signals.js",
+        "@preact/signals-core": "/js/third_party/preact/signals-core.js",
+        "preact-render-to-string": "/js/third_party/preact/preact-render-to-string.js"
+      }
+    }
+    </script>
+    <script src="/js/lib/dev/reload.js" async></script>
+    <script src="/js/third_party/tailwind.js" async></script>
+    <script type="module" src="/js/tauri-index.js"></script>
+    <script type="module" src="/js/lib/dev/state.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>
+            <a href="#!/">
+                Mumble
+            </a>
+        </h1>
+    </header>
+    <main>
+        <div class="flex flex-col items-center h-full justify-center">
+            <p class="jsonly">Loading...</p>
+            <noscript>
+                Javascript is required for this app to work.
+            </noscript>
+        </div>
+    </main>
+</body>
+
+</html>

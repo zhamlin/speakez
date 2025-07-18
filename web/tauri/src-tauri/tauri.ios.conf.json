@@ -1,0 +1,7 @@
+{
+    "build": {
+        "frontendDist": "../../client",
+        "devUrl": "http://localhost:65012",
+        "beforeDevCommand": ""
+    }
+}

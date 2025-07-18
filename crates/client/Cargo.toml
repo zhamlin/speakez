@@ -1,0 +1,32 @@
+[package]
+name = "speakez-client"
+version = "0.1.0"
+edition = "2021"
+
+[features]
+serde = ["dep:serde", "speakez/serde"]
+jsonschema = ["serde", "dep:schemars", "dep:serde_json", "speakez/jsonschema"]
+
+[dependencies]
+serde = { workspace = true, features = ["derive"], optional = true }
+serde_json = { workspace = true, optional = true }
+schemars = { workspace = true, optional = true}
+
+speakez = { path = "../speakez" }
+libopus = { path = "../libopus" }
+
+bytes = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true, features = [] }
+
+aws-lc-rs = { workspace = true }
+aes = { workspace = true }
+rustls = { workspace = true }
+rustls-platform-verifier = { workspace = true }
+
+cpal = { version = "0.15.3", features = []}
+ringbuf = "0.4.7"
+enum_dispatch = "0.3.13"
+
+[dev-dependencies]
+gen = { path = "../gen" }

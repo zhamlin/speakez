@@ -1,0 +1,36 @@
+[package]
+name = "speakez"
+version = "0.1.0"
+edition = "2021"
+
+[[bench]]
+name = "example"
+harness = false
+
+[profile.bench]
+debug = true
+strip = false
+
+[features]
+default = ["tracing", "jsonschema"]
+serde = ["dep:serde"]
+jsonschema = ["serde", "dep:schemars", "dep:serde_json"]
+tracing = ["dep:tracing"]
+
+[dependencies]
+bytes = { workspace = true }
+prost = "0.12.6"
+
+tracing = { workspace = true, optional = true }
+serde = { workspace = true, features = ["derive"], optional = true }
+serde_json = { workspace = true, optional = true }
+schemars = { workspace = true, optional = true}
+
+[dev-dependencies]
+quickcheck = "1.0.3"
+quickcheck_macros = "1.0.0"
+divan = { workspace = true }
+gen = { path = "../gen" }
+
+[build-dependencies]
+prost-build = "0.12.6"

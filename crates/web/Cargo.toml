@@ -1,0 +1,19 @@
+[package]
+name = "speakez-web"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[features]
+default = []
+panic_hook = ["dep:console_error_panic_hook"]
+
+[dependencies]
+wasm-bindgen = "0.2.93"
+serde = { workspace = true, features = ["derive"] }
+serde-wasm-bindgen = "0.4"
+
+speakez = { path = "../speakez", features = ["serde"] }
+console_error_panic_hook = { version = "0.1.7", optional = true }

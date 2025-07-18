@@ -1,0 +1,7 @@
+[package]
+name = "libopus"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+opus-sys = { path = "../opus-sys" }

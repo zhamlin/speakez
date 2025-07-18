@@ -1,0 +1,62 @@
+{
+    "compilerOptions": {
+        "lib": [
+            "es2020",
+            "es2020.sharedmemory",
+            "es2022",
+            "dom",
+            "dom.iterable",
+            "WebWorker"
+        ],
+        "allowJs": true,
+        "target": "es2016",
+        "noEmit": true,
+        "module": "commonjs",
+        "moduleResolution": "node10",
+        "esModuleInterop": true,
+        "baseUrl": "./",
+        "traceResolution": true,
+        "skipLibCheck": true,
+        "paths": {
+            "/js/*": [
+                "./js/*"
+            ],
+            "html": [
+                "js/lib/html.js"
+            ],
+            "tailwindcss": [
+                "js/types/third_party/tailwindcss"
+            ],
+            "jsx": [
+                "js/types/third_party/jsx.d.ts"
+            ],
+            "htm": [
+                "js/types/third_party/htm.d.ts"
+            ],
+            "preact": [
+                "js/types/third_party/preact.d.ts"
+            ],
+            "@preact/signals": [
+                "js/types/third_party/preact-signals.d.ts"
+            ],
+            "@preact/signals-core": [
+                "js/types/third_party/preact-signals-core.d.ts"
+            ],
+            "preact/hooks": [
+                "js/types/third_party/preact-hooks.d.ts"
+            ],
+            "preact/render-to-string": [
+                "js/types/third_party/preact-render-to-string.d.ts"
+            ],
+            "deepsignal": [
+                "js/types/third_party/deepsignal.d.ts"
+            ],
+            "ringbuf": [
+                "js/third_party/ringbuf"
+            ],
+            "@tuari/api": [
+                "js/types/third_party/tauri/api"
+            ]
+        }
+    }
+}

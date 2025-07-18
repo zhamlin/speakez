@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light ">
+    <title>Mumble</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/js/lib/dev/reload.js"></script>
+    <script src="/js/third_party/tailwind.js" async></script>
+    <style type="text/tailwindcss">
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+
+        header {
+          display: flex;
+          @apply text-center text-white text-2xl items-center bg-purple-700;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>
+            <a href="#!/">
+                Mumble
+            </a>
+        </h1>
+    </header>
+
+    <main>
+        <div class="flex flex-row h-full items-center">
+            <div class="messages h-full">
+                <h3>Messages</h3>
+                <div class="message">User 1 (You): b</div>
+                <div class="message">User 2: a</div>
+            </div>
+            <ol class="channels h-full">
+                <li class="channel" key=${c.id}>
+                    <h3 class="clickable" onclick="toggleSubchannels(this)">${c.name}</h3>
+                    <ol class="users">
+                        <li class="user talking" key=${u.session}>
+                            ${u.name}
+                        </li>
+                        <li class="user you" key=${u.session}>
+                            You
+                        </li>
+                    </ol>
+                    <ol class="subchannels">
+                        <li class="channel" key=${c.id}>
+                            <h3 class="clickable">Sub Channel</h3>
+                            <ol class="users">
+                                <li class="user" key=${u.session}>
+                                    ${u.name}
+                                </li>
+                            </ol>
+                        </li>
+                        <ol />
+                </li>
+            </ol>
+        </div>
+    </main>
+</body>
+
+<script>
+    function toggleSubchannels(channelElement) {
+        const subchannels = channelElement.nextElementSibling.nextElementSibling;
+        if (subchannels) {
+            subchannels.style.display = subchannels.style.display === 'none' ? 'block' : 'none';
+        }
+    }
+</script>
+
+</html>

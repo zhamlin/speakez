@@ -1,0 +1,42 @@
+[workspace]
+resolver = "2"
+
+members = [
+    "crates/speakez",
+    "crates/client",
+    "crates/server",
+    "crates/web",
+    "crates/opus-sys",
+    "crates/libopus",
+    "crates/gen",
+]
+
+exclude = [
+    "web/tauri/src-tauri",
+]
+
+[workspace.dependencies]
+serde = { version = "1.0.210", features = ["derive"] }
+serde_json = { version = "1.0.128" }
+schemars = { version = "1.0.0-alpha.15"}
+
+tracing = { version = "0.1" }
+tracing-subscriber = { version = "0.3", features = [] }
+bytes = "1.6.0"
+
+aws-lc-rs = "1.8.1"
+aes = "0.8.4"
+rustls = "0.23.10"
+rustls-pemfile = "2.1.2"
+rustls-platform-verifier = "0.4.0"
+
+# dev-dependencies
+divan = "0.1.14"
+
+[profile.release-small]
+inherits = "release"
+lto = true
+opt-level = "z" # Optimize for size.
+codegen-units = 1
+panic = 'abort'
+strip = true
